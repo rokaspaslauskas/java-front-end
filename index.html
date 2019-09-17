@@ -2,9 +2,166 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <title></title>
   </head>
   <body>
-    <h1>hello world</h1>
+    <div class="toTop">
+        <i class="fas fa-arrow-up"></i>
+      </div>
+    <div class="turbo-menu">
+      <div class="menu">
+        <i id="close" class="fas fa-times"></i>
+        <a>Opnion1</a>
+        <a>Opnion1</a>
+        <a>Opnion1</a>
+        <a>Opnion1</a>
+      </div>
+    </div>
+    <div class="container">
+
+    <header class="container header">
+      <div class="logo">
+        <h2>Logo</h2>
+      </div>
+      <div class="mobile-menu">
+        <i id="open" class="fas fa-bars"></i>
+      </div>
+      <nav class="navigation">
+                <ul class="desktop-nav">
+                  <li>
+                        <span class="btn1">Dropdown</span>
+                        <ul class="dropdown">
+                            <li>Opnion1</li>
+                            <li>Opnion1</li>
+                            <li>Opnion1</li>
+                        </ul>
+                      </li>
+                </ul>
+      </nav>
+    </header>
+  </div>
+    <div class="top">
+      <div class="top-cont container">
+        <div class="text-wrapper">
+          <h2>Developer? Start your FE exam</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At minus
+            modi officiis reprehenderit. Distinctio dolore, dolorum exercitationem
+            harum inventore itaque</p>
+        </div>
+        <div id="contact" class="contact-us">
+          <a class="contact-button" href="#">CONTACT WITH US</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="mid container">
+      <h2>Meet Our Speakers
+      </h2>
+      <div class="mid-photos">
+        <div class="main-photo">
+
+        </div>
+        <div class="photo-container">
+          <div class="two-photo">
+            <div class="photo-1">
+            </div>
+            <div class="photo-2">
+            </div>
+          </div>
+          <div class="two-photo">
+            <div class="photo-3">
+            </div>
+            <div class="photo-4">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+
+      <div class="bottom-container">
+        <form class="" action="index.html" method="post">
+          <div class="letter-icon">
+            <h1>Send your questions</h1>
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="for-form-items">
+
+          <div class="form-item spacer2 input-name">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="" value="">
+          </div>
+          <div class="form-item input-surname">
+            <label for="surname">Surname</label>
+            <input id="surname" type="text" name="" value="">
+          </div>
+        </div>
+      <div class="form-item spacer">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" name="" value="">
+      </div>
+      <textarea name="name" placeholder="Your message goes here..." rows="8" cols="80"></textarea>
+      <div class="submit contact-button">
+        SUBMIT
+      </div>
+      </form>
+    </div>
+
+    </div>
+
+
+    <script type="text/javascript">
+      /// MOBILE-NAV bar
+      let navBurger = document.querySelector('#open');
+
+      navBurger.addEventListener('click', toggleNav);
+
+      let navClose = document.querySelector('#close');
+
+      navClose.addEventListener('click', toggleNav);
+
+      function toggleNav(){
+          let sidebarState = document.querySelector('.turbo-menu').style.height;
+          //---------------- adding and removing class .open from #nav-burger
+          document.querySelector('#open').classList.toggle('open');
+          if (sidebarState === '100%') {
+              return close();
+          }
+          return open();
+      }
+      function open() {
+          document.querySelector('.turbo-menu').style.height = '100%';
+      }
+      function close() {
+           document.querySelector('.turbo-menu').style.height = '0';
+      }
+
+
+      // TO TOP
+
+      let toTop = document.querySelector('.toTop');
+      toTop.addEventListener("click", function () {
+        window.scroll({top:0, right:0, behavior: 'smooth'})
+      })
+      window.addEventListener('scroll', function () {
+        if (window.scrollY > 60){
+          toTop.style.display = 'block';
+        } else {
+          toTop.style.display = 'none';
+        }
+      })
+
+      //TO CONTACT US
+
+      let toContact = document.querySelector('#contact');
+      toContact.addEventListener("click", function () {
+        window.scroll({top:1700, left:0, behavior: 'smooth'})
+      })
+    </script>
   </body>
 </html>
